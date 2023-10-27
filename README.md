@@ -15,9 +15,9 @@ Whenever the user will click on a cell, it'll become blue and a console message 
 
 ### Procedure
 
-1. Create the button with the function that starts the functions;
-2. Function to generate an array of numbers from 1 to 100;
-3. Function to create a cell for each number in the array;
+1. Function to generate an array of numbers from 1 to 100;
+2. Function to create a cell for each number in the array;
+3. Create the button with the function that starts the functions;
 4. Function that prints the number and changes color.
 
 ### Output

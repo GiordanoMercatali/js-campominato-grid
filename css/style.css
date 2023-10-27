@@ -1,6 +1,7 @@
 /*Custom properties*/
 :root{
-    
+    --font-color: black;
+    --border: 1px solid black;
 }
 
 /*Reset*/
@@ -8,4 +9,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--font-color);
+}
+
+/* GRID */
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 600px;
+}
+
+/* CELL */
+.cell{
+    width: 60px;
+    height: 60px;
+    border: var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
