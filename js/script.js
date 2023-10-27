@@ -5,8 +5,9 @@ const gridElem = document.querySelector(".grid");
 for (let i = 0; i < 100; i++){
     numberArray[i] = i + 1;
     curNumber = numberArray[i];
-    console.log(i, curNumber);
+    // console.log(i, curNumber);
     const cell = generateGridCell(curNumber);
+    cell.addEventListener("click", handleCellClick);
     gridElem.append(cell);
 }
 
@@ -15,4 +16,10 @@ function generateGridCell(innerNumber){
     newCell.classList.add("cell");
     newCell.innerHTML = innerNumber;
     return newCell;
+}
+
+function handleCellClick() {
+    const clickedNumber = parseInt(this.innerHTML);
+    console.log(clickedNumber);
+    this.classList.add("blue");
 }
