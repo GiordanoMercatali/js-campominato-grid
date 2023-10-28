@@ -1,14 +1,29 @@
 const startBtn = document.getElementById("start");
+const difficultyElem = document.getElementById("difficulty");
+console.log(difficultyElem);
 
 startBtn.addEventListener("click", function(){
 
     startBtn.classList.add("disappear");
+    difficultyElem.classList.add("disappear");
 
     const numberArray = [];
 
     const gridElem = document.querySelector(".grid");
 
-    for (let i = 0; i < 100; i++){
+    const difficulty = difficultyElem.value;
+    
+    let cellNumber;
+
+    if (difficulty === "easy"){
+        cellNumber = 100;
+    } else if (difficulty === "medium"){
+        cellNumber = 81;
+    } else{
+        cellNumber = 49;
+    }
+
+    for (let i = 0; i < cellNumber; i++){
         numberArray[i] = i + 1;
         curNumber = numberArray[i];
         // console.log(i, curNumber);
