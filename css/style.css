@@ -33,3 +33,7 @@
 .blue{
     background-color: blue;
 }
+
+.disappear{
+    display: none;
+}
