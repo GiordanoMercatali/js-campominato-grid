@@ -30,6 +30,16 @@
     align-items: center;
 }
 
+.cell.small{
+    width: 66px;
+    height: 66px;
+}
+
+.cell.big{
+    width: 85px;
+    height: 85px;
+}
+
 .blue{
     background-color: blue;
 }
