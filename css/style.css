@@ -18,12 +18,13 @@
     flex-wrap: wrap;
     margin: 0 auto;
     width: 600px;
+    height: 600px;
 }
 
 /* CELL */
 .cell{
-    width: 60px;
-    height: 60px;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
     border: var(--border);
     display: flex;
     justify-content: center;
@@ -31,13 +32,13 @@
 }
 
 .cell.small{
-    width: 66px;
-    height: 66px;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
 }
 
 .cell.big{
-    width: 85px;
-    height: 85px;
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 .blue{
