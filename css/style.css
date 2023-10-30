@@ -23,8 +23,8 @@
 
 /* CELL */
 .cell{
-    width: calc(100% / 10);
-    height: calc(100% / 10);
+    /* width: calc(100% / 10); */
+    /* height: calc(100% / 10); */
     border: var(--border);
     display: flex;
     justify-content: center;

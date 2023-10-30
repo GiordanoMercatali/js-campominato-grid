@@ -13,54 +13,33 @@ startBtn.addEventListener("click", function(){
 
     const difficulty = difficultyElem.value;
     
-    let cellNumber;
+    let gridSize;
 
     if (difficulty === "easy"){
-        cellNumber = 100;
-        for (let i = 0; i < cellNumber; i++){
-        numberArray[i] = i + 1;
-        curNumber = numberArray[i];
-        const cell = generateGridCellEasy(curNumber);
-        cell.addEventListener("click", handleCellClick);
-        gridElem.append(cell);
-    }
+        gridSize = 100;
+        cellSize = 10;
     } else if (difficulty === "medium"){
-        cellNumber = 81;
-        for (let i = 0; i < cellNumber; i++){
+        gridSize = 81;
+        cellSize = 9;
+    }else{
+        gridSize = 49;
+        cellSize = 7;
+    }
+    console.log(gridSize);
+    
+    for (let i = 0; i < gridSize; i++){
         numberArray[i] = i + 1;
         curNumber = numberArray[i];
-        const cell = generateGridCellMedium(curNumber);
+        const cell = generateGridCell(curNumber, cellSize);
         cell.addEventListener("click", handleCellClick);
         gridElem.append(cell);
-    }
-    } else{
-        cellNumber = 49;
-        for (let i = 0; i < cellNumber; i++){
-        numberArray[i] = i + 1;
-        curNumber = numberArray[i];
-        const cell = generateGridCellHard(curNumber);
-        cell.addEventListener("click", handleCellClick);
-        gridElem.append(cell);
-    }
     }
 
-    function generateGridCellEasy(innerNumber){
+    function generateGridCell(innerNumber, cellSizeMultiplier){
         const newCell = document.createElement("div");
         newCell.classList.add("cell");
-        newCell.innerHTML = innerNumber;
-        return newCell;
-    }
-
-    function generateGridCellMedium(innerNumber){
-        const newCell = document.createElement("div");
-        newCell.classList.add("cell", "small");
-        newCell.innerHTML = innerNumber;
-        return newCell;
-    }
-
-    function generateGridCellHard(innerNumber){
-        const newCell = document.createElement("div");
-        newCell.classList.add("cell", "big");
+        newCell.style.width = `calc(100% / ${cellSizeMultiplier})`;
+        newCell.style.height = `calc(100% / ${cellSizeMultiplier})`;
         newCell.innerHTML = innerNumber;
         return newCell;
     }
@@ -71,3 +50,4 @@ startBtn.addEventListener("click", function(){
         this.classList.add("blue");
     }
 })
+
